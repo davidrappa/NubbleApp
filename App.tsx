@@ -1,15 +1,18 @@
 import React from 'react';
-import {SafeAreaView} from 'react-native';
-
-import {Text} from './src/components/Text';
+import {ThemeProvider} from '@shopify/restyle';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {theme} from './src/theme/theme';
+import {LoginScreen} from './src/screens/auth/LoginScreen/LoginScreen';
+import {SignUpScreen} from './src/screens/auth/SignUpScreen/SignUpScreen';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text preset="headingLarge">Coffstack</Text>
-      <Text preset="paragraphCaption">Coffstack</Text>
-      <Text preset="paragraphMedium">Coffstack</Text>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <ThemeProvider theme={theme}>
+        {/* <LoginScreen /> */}
+        <SignUpScreen />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
 
