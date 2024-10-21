@@ -4,10 +4,21 @@ import {Text} from '../../../components/Text/Text';
 import {TextInput} from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
 import {PasswordInput} from '../../../components/PasswordInput/PasswordInput';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 
 export function SignUpScreen() {
+  const {reset} = useResetNavigationSuccess();
+
   function submitForm() {
     // TODO: implementar
+    reset({
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é so fazer login na nossa plataforma.',
+      icon: {
+        name: 'checkRound',
+        color: 'success',
+      },
+    });
   }
   return (
     <Screen canGoBack scrollable>
