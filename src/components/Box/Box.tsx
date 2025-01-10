@@ -1,3 +1,5 @@
+import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
+
 import {
   backgroundColor,
   BackgroundColorProps,
@@ -12,7 +14,6 @@ import {
   spacingShorthand,
   SpacingShorthandProps,
 } from '@shopify/restyle';
-import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
 
 import {Theme} from '@theme';
 

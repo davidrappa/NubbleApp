@@ -1,9 +1,8 @@
 import React from 'react';
-import {useForm} from 'react-hook-form';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {zodResolver} from '@hookform/resolvers/zod';
 
-import {RootStackParamList} from '@routes';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {useForm} from 'react-hook-form';
 
 import {
   Button,
@@ -12,6 +11,7 @@ import {
   Screen,
   Text,
 } from '@components';
+import {RootStackParamList} from '@routes';
 
 import {LoginSchema, loginSchema} from './loginSchema';
 
@@ -54,7 +54,6 @@ export function LoginScreen({navigation}: ScreenProps) {
         placeholder="Digite seu e-mail"
         boxProps={{mb: 's20'}}
       />
-
       <FormPasswordInput
         control={control}
         name="password"
@@ -62,7 +61,6 @@ export function LoginScreen({navigation}: ScreenProps) {
         placeholder="Digite sua senha"
         boxProps={{mb: 's20'}}
       />
-
       <Text
         onPress={navigateToForgotPasswordScreen}
         color="primary"
@@ -70,7 +68,6 @@ export function LoginScreen({navigation}: ScreenProps) {
         bold>
         Esqueci minha senha
       </Text>
-
       <Button
         disabled={!formState.isValid}
         onPress={handleSubmit(submitForm)}
