@@ -25,13 +25,19 @@ export const theme = createTheme({
     ...palette,
     primary: palette.greenPrimary,
     primaryContrast: palette.grayWhite,
+
     buttonPrimary: palette.greenPrimary,
+
     background: palette.grayWhite,
     backgroundContrast: palette.grayBlack,
+
     error: palette.redError,
     errorLight: palette.redErrorLight,
+
     success: palette.greenSuccess,
     successLight: palette.greenSuccessLight,
+
+    marked: palette.carrotSecondary,
   },
   spacing: {
     s4: 4,
@@ -60,7 +66,7 @@ export const theme = createTheme({
 export const $shadowProps: ViewStyle = {
   elevation: 10,
   shadowColor: '#000',
-  opacity: 0.05,
+  shadowOpacity: 0.05,
   shadowRadius: 12,
   shadowOffset: {width: 0, height: -3},
 };
