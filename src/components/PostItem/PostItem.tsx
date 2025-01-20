@@ -24,6 +24,7 @@ export function PostItem({post}: Props) {
         favoriteCount={post.favoriteCount}
       />
       <PostBottom
+        id={post.id}
         author={post.author}
         commentCount={post.commentCount}
         text={post.text}
