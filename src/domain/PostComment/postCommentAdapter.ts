@@ -1,3 +1,5 @@
+import {dateUtils} from '@utils';
+
 import {PostComment, PostCommentAPI} from './postCommentTypes';
 
 function toPostComment(postCommentApi: PostCommentAPI): PostComment {
@@ -5,6 +7,7 @@ function toPostComment(postCommentApi: PostCommentAPI): PostComment {
     id: postCommentApi.id,
     message: postCommentApi.message,
     createdAt: postCommentApi.created_at,
+    createdAtRelative: dateUtils.formatRelative(postCommentApi.created_at),
     author: {
       id: postCommentApi.user.id,
       profileURL: postCommentApi.user.profile_url,
