@@ -2991,6 +2991,7 @@ __metadata:
     react-test-renderer: 18.3.1
     typescript: 5.0.4
     zod: ^3.23.8
+    zustand: ^5.0.3
   languageName: unknown
   linkType: soft
 
@@ -11007,5 +11008,26 @@ __metadata:
   version: 3.23.8
   resolution: "zod@npm:3.23.8"
   checksum: 15949ff82118f59c893dacd9d3c766d02b6fa2e71cf474d5aa888570c469dbf5446ac5ad562bb035bf7ac9650da94f290655c194f4a6de3e766f43febd432c5c
+  languageName: node
+  linkType: hard
+
+"zustand@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "zustand@npm:5.0.3"
+  peerDependencies:
+    "@types/react": ">=18.0.0"
+    immer: ">=9.0.6"
+    react: ">=18.0.0"
+    use-sync-external-store: ">=1.2.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    immer:
+      optional: true
+    react:
+      optional: true
+    use-sync-external-store:
+      optional: true
+  checksum: 72da39ac3017726c3562c615a0f76cee0c9ea678d664f82ee7669f8cb5e153ee81059363473094e4154d73a2935ee3459f6792d1ec9d08d2e72ebe641a16a6ba
   languageName: node
   linkType: hard
