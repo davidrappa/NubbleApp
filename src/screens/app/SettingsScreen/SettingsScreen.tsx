@@ -1,19 +1,16 @@
 import React from 'react';
 
-import {AppScreenProps} from 'src/routes/navigationType';
+import {useAuthSignOut} from '@domain';
 
-import {Button, Screen, Text} from '@components';
+import {Button, Screen} from '@components';
+import {AppScreenProps} from '@routes';
 
-export function SettingsScreen({navigation}: AppScreenProps<'SettingsScreen'>) {
+export function SettingsScreen({}: AppScreenProps<'SettingsScreen'>) {
+  const {isLoading, signOut} = useAuthSignOut();
+
   return (
-    <Screen canGoBack>
-      <Text>Setting Screen</Text>
-      <Button
-        title={'Voltar para a Home'}
-        onPress={() =>
-          navigation.navigate('AppTabNavigator', {screen: 'HomeScreen'})
-        }
-      />
+    <Screen canGoBack title="Configurações">
+      <Button title={'Sair da conta'} loading={isLoading} onPress={signOut} />
     </Screen>
   );
 }

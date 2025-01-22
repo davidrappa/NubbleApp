@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {AuthCredentialsProvider} from '@services';
 import {ThemeProvider} from '@shopify/restyle';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
@@ -13,14 +14,16 @@ const queryClient = new QueryClient();
 
 function App(): JSX.Element {
   return (
-    <QueryClientProvider client={queryClient}>
-      <SafeAreaProvider>
-        <ThemeProvider theme={theme}>
-          <Router />
-          <Toast />
-        </ThemeProvider>
-      </SafeAreaProvider>
-    </QueryClientProvider>
+    <AuthCredentialsProvider>
+      <QueryClientProvider client={queryClient}>
+        <SafeAreaProvider>
+          <ThemeProvider theme={theme}>
+            <Router />
+            <Toast />
+          </ThemeProvider>
+        </SafeAreaProvider>
+      </QueryClientProvider>
+    </AuthCredentialsProvider>
   );
 }
 
