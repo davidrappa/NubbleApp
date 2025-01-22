@@ -3095,6 +3095,7 @@ __metadata:
     react-hook-form: ^7.53.1
     react-native: 0.76.0
     react-native-calendars: ^1.1307.0
+    react-native-mmkv: ^3.2.0
     react-native-safe-area-context: ^4.11.1
     react-native-screens: ^3.34.0
     react-native-svg: ^15.7.1
@@ -8978,6 +8979,16 @@ __metadata:
     moment:
       optional: true
   checksum: 1fc559d66bf0c687c09ba9462f243051127154efb4e0e293ddbabdfe8a64523ca114c905d853a2b911626b32c2f25abdb1de39cd07e8865d8c6a970991175195
+  languageName: node
+  linkType: hard
+
+"react-native-mmkv@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "react-native-mmkv@npm:3.2.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 766944a7cbf265e27b57576e51bff8604cd8f58c88eaec78bd93d4ce10ff9127d5f75f4c3bb03d6c7ce5dafa07c65e233d5363c0504db802cc88eaf1ccbffaa1
   languageName: node
   linkType: hard
 
