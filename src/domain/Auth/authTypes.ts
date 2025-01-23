@@ -1,5 +1,10 @@
 import {User, UserAPI} from '../User';
 
+export interface FieldIsAvailableAPI {
+  message: string;
+  isAvailable: boolean;
+}
+
 export interface AuthCredentials {
   token: string;
   user: User;

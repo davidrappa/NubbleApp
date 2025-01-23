@@ -22,6 +22,6 @@ export function useAuthSignUp(options?: MutationOptions<void>) {
 
   return {
     isLoading: mutation.isLoading,
-    signIn: (variables: SignUpData) => mutation.mutate(variables),
+    signUp: (variables: SignUpData) => mutation.mutate(variables),
   };
 }
