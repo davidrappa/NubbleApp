@@ -8,12 +8,16 @@ export interface FieldIsAvailableAPI {
 export interface AuthCredentials {
   token: string;
   user: User;
+  tokenExpiresAt: string;
+  refreshToken: string;
 }
 
 export interface AuthCredentialsAPI {
   auth: {
     token: string;
     type: string;
+    refreshToken: string;
+    expires_at: string;
   };
   user: UserAPI;
 }
