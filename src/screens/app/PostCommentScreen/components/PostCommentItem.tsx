@@ -9,7 +9,7 @@ import {Box, ProfileAvatar, Text} from '@components';
 interface Props {
   postComment: PostComment;
   postId: number;
-  userId: number;
+  userId: number | null;
   postAuthorId: number;
 }
 export function PostCommentItem({
