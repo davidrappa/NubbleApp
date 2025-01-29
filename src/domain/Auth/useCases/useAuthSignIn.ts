@@ -20,12 +20,17 @@ export function useAuthSignIn(options?: MutationOptions<AuthCredentials>) {
       }
     },
     onSuccess: authCredentials => {
+      if (options?.onSuccess) {
+        options.onSuccess(authCredentials);
+      }
       saveCredentials(authCredentials);
     },
   });
 
   return {
     isLoading: mutation.isLoading,
+    isSuccess: mutation.isSuccess,
+    isError: mutation.isError,
     signIn: (variables: Variables) => mutation.mutate(variables),
   };
 }
