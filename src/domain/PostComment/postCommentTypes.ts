@@ -1,10 +1,12 @@
+import {UserAPI} from '../User';
+
 export interface PostComment {
-  id: number;
+  id: number; // 117;
   message: string;
-  createdAt: string;
-  createdAtRelative: string;
+  createdAt: string; // '2023-07-24T20:38:56.192+10:00';
+  createdAtRelative: string; // '1 h, 2 sem';
   author: {
-    id: number;
+    id: number; // 6;
     profileURL: string;
     name: string;
     userName: string;
@@ -12,33 +14,12 @@ export interface PostComment {
 }
 
 export interface PostCommentAPI {
-  id: number;
-  message: string;
-  user_id: number;
-  post_id: number;
-  created_at: string;
-  updated_at: string;
-  user: {
-    id: number;
-    first_name: string;
-    last_name: string;
-    username: string;
-    email: string;
-    profile_url: string;
-    is_online: boolean;
-    full_name: string;
-  };
-  post: {
-    id: number;
-    text: string;
-    user_id: number;
-    image_url: string;
-    is_fixed: boolean;
-    is_activated: boolean;
-    created_at: string;
-    updated_at: string;
-    status: string;
-    meta: Record<string, unknown>;
-  };
-  meta: Record<string, unknown>;
+  id: number; // 117;
+  message: string; // 'Pariatur cupiditate neque fugit pariatur ipsa.';
+  user_id: number; // 6;
+  post_id: number; // 1;
+  created_at: string; // '2023-07-24T20:38:56.192+10:00';
+  updated_at: string; // '2023-07-24T20:38:56.192+10:00';
+  user: UserAPI;
+  meta: any; //{};
 }
