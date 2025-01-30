@@ -1,8 +1,7 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useCallback, useEffect, useRef} from 'react';
 import {Animated} from 'react-native';
 
-import {ToastPosition, useToast, useToastService} from '@services';
+import {useToast, useToastService} from '@services';
 
 import {ToastContent} from './components/ToastContent';
 
@@ -26,7 +25,7 @@ export function Toast() {
     (callback: Animated.EndCallback) => {
       Animated.timing(fadeAnim, {
         toValue: 0,
-        duration: DEFAULT_DURATION,
+        duration: 1000,
         useNativeDriver: true,
       }).start(callback);
     },
@@ -47,16 +46,10 @@ export function Toast() {
     return null;
   }
 
-  const position: ToastPosition = toast?.position || 'top';
-
   return (
     <Animated.View
-      style={{
-        position: 'absolute',
-        alignSelf: 'center',
-        opacity: fadeAnim,
-        [position]: 100,
-      }}>
+      testID={'toast-message'}
+      style={{position: 'absolute', alignSelf: 'center', opacity: fadeAnim}}>
       <ToastContent toast={toast} />
     </Animated.View>
   );
