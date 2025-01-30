@@ -4,7 +4,7 @@ const config: Config = {
   preset: 'react-native',
   setupFiles: ['<rootDir>/src/test/jestSetup.ts'],
   collectCoverageFrom: [
-    'src/{components,utils,hooks,domain}/**/*.{js,jsx,ts,tsx}',
+    'src/{components,utils,hooks,domain,screen}/**/*.{js,jsx,ts,tsx}',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', 'index'],
   setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
