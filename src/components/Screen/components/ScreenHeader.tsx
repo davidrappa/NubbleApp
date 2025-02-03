@@ -2,34 +2,40 @@ import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 
-import {Box, Icon, ScreenProps, Text, TouchableOpacityBox} from '@components';
+import {Box, Icon, Text, TouchableOpacityBox} from '@components';
 
-type Props = Pick<ScreenProps, 'title' | 'canGoBack'>;
+import {ScreenProps} from '../Screen';
 
 const ICON_SIZE = 20;
-export function ScreenHeader({canGoBack, title}: Props) {
+type Props = Pick<ScreenProps, 'title' | 'canGoBack' | 'HeaderComponent'>;
+export function ScreenHeader({canGoBack, title, HeaderComponent}: Props) {
   const navigation = useNavigation();
+
+  const showBackLabel = !title && !HeaderComponent;
+
   return (
     <Box
       flexDirection="row"
       mb="s24"
-      justifyContent="space-between"
-      alignItems="center">
+      alignItems="center"
+      justifyContent="space-between">
       {canGoBack && (
         <TouchableOpacityBox
-          onPress={navigation.goBack}
+          flexDirection="row"
           alignItems="center"
-          flexDirection="row">
+          mr="s10"
+          onPress={navigation.goBack}>
           <Icon size={ICON_SIZE} name="arrowLeft" color="primary" />
-          {!title && (
+          {showBackLabel && (
             <Text preset="paragraphMedium" semiBold ml="s8">
               Voltar
             </Text>
           )}
         </TouchableOpacityBox>
       )}
+      {HeaderComponent}
       {title && <Text preset="headingSmall">{title}</Text>}
-      {title && <Box width={ICON_SIZE} />}
+      {title && <Box backgroundColor="carrotSecondary" width={ICON_SIZE} />}
     </Box>
   );
 }
