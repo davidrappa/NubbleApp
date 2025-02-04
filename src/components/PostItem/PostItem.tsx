@@ -22,7 +22,7 @@ export function PostItem({post}: Props) {
           username: post.author.userName,
           profileUrl: post.author.profileURL,
         }}
-      />{' '}
+      />
       <PostImage imageURL={post.imageURL} />
       <PostActions
         reactionCount={post.reactionCount}
