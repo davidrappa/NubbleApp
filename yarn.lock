@@ -3344,6 +3344,7 @@ __metadata:
     react-native: 0.76.0
     react-native-calendars: ^1.1307.0
     react-native-mmkv: ^3.2.0
+    react-native-permissions: ^5.2.5
     react-native-safe-area-context: ^4.11.1
     react-native-screens: ^3.34.0
     react-native-svg: ^15.7.1
@@ -9396,6 +9397,20 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 766944a7cbf265e27b57576e51bff8604cd8f58c88eaec78bd93d4ce10ff9127d5f75f4c3bb03d6c7ce5dafa07c65e233d5363c0504db802cc88eaf1ccbffaa1
+  languageName: node
+  linkType: hard
+
+"react-native-permissions@npm:^5.2.5":
+  version: 5.2.5
+  resolution: "react-native-permissions@npm:5.2.5"
+  peerDependencies:
+    react: ">=18.1.0"
+    react-native: ">=0.70.0"
+    react-native-windows: ">=0.70.0"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: d51221017070145ae16d8dee06f69ebe89419ce179e5b096cdfe8fe89309c9b2c36005aa194e2b52b9f5fabb9b411a511780ebba4523d108733218b031be222c
   languageName: node
   linkType: hard
 
