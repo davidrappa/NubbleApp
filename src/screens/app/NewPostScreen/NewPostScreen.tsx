@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {Dimensions, FlatList, Image, ListRenderItemInfo} from 'react-native';
 
-import {useCameraRoll, usePermission} from '@services';
+import {useMultimediaGetPhotos, usePermission} from '@services';
 import {AppTabScreenProps} from 'src/routes/navigationType';
 
 import {PermissionManager, PressableBox, Screen} from '@components';
@@ -17,7 +17,7 @@ export function NewPostScreen({
 }: AppTabScreenProps<'NewPostScreen'>) {
   const [selectedImage, setSelectedImage] = useState<string>();
   const permission = usePermission('photoLibrary');
-  const {photoList, fetchNextPage} = useCameraRoll(
+  const {photoList, fetchNextPage} = useMultimediaGetPhotos(
     permission.status === 'granted',
     setSelectedImage,
   );
