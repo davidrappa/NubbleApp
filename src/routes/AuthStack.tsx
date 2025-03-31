@@ -17,7 +17,7 @@ export type AuthStackParamList = {
   SuccessScreen: {
     title: string;
     description: string;
-    icon: Pick<IconProps, 'name' | 'color'>;
+    icon: Pick<IconProps, 'name' | 'color' | 'fillColor'>;
   };
 };
 
