@@ -3,7 +3,8 @@ import React from 'react';
 import {Post} from '@domain';
 import {useNavigation} from '@react-navigation/native';
 
-import {Box, Text} from '@components';
+import {Box} from '../../Box/Box';
+import {Text} from '../../Text/Text';
 
 type Props = Pick<Post, 'author' | 'text' | 'commentCount' | 'id'>;
 

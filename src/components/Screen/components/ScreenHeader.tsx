@@ -2,8 +2,9 @@ import React from 'react';
 
 import {useNavigation} from '@react-navigation/native';
 
-import {Box, BoxProps, Icon, Text, TouchableOpacityBox} from '@components';
-
+import {Box, BoxProps, TouchableOpacityBox} from '../../Box/Box';
+import {Icon} from '../../Icon/Icon';
+import {Text} from '../../Text/Text';
 import {ScreenProps} from '../Screen';
 
 const ICON_SIZE = 20;

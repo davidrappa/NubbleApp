@@ -2,7 +2,9 @@ import React from 'react';
 
 import {Post} from '@domain';
 
-import {Box, Icon, IconProps, Text, TouchableOpacityBox} from '@components';
+import {Box, TouchableOpacityBox} from '../../Box/Box';
+import {Icon, IconProps} from '../../Icon/Icon';
+import {Text} from '../../Text/Text';
 
 type Props = Pick<Post, 'reactionCount' | 'commentCount' | 'favoriteCount'>;
 
