@@ -14,6 +14,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		19AC1A49A61880549A3D15E9 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C276E10033159A2B708EC097 /* ExpoModulesProvider.swift */; };
+		2F264A5F2DA56CF100B9197D /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F264A5E2DA56CF100B9197D /* BootSplash.storyboard */; };
 		2FB0DA5F2CB84CEE006C0DE8 /* Satoshi-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0DA552CB84CEE006C0DE8 /* Satoshi-BoldItalic.otf */; };
 		2FB0DA602CB84CEE006C0DE8 /* Satoshi-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0DA562CB84CEE006C0DE8 /* Satoshi-MediumItalic.otf */; };
 		2FB0DA612CB84CEE006C0DE8 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB0DA572CB84CEE006C0DE8 /* Satoshi-Regular.otf */; };
@@ -51,6 +52,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NubbleApp/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = NubbleApp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-NubbleApp-NubbleAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NubbleApp-NubbleAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F264A5E2DA56CF100B9197D /* BootSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = NubbleApp/BootSplash.storyboard; sourceTree = "<group>"; };
 		2FB0DA552CB84CEE006C0DE8 /* Satoshi-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-BoldItalic.otf"; sourceTree = "<group>"; };
 		2FB0DA562CB84CEE006C0DE8 /* Satoshi-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-MediumItalic.otf"; sourceTree = "<group>"; };
 		2FB0DA572CB84CEE006C0DE8 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		13B07FAE1A68108700A75B9A /* NubbleApp */ = {
 			isa = PBXGroup;
 			children = (
+				2F264A5E2DA56CF100B9197D /* BootSplash.storyboard */,
 				2FB0DA542CB84CBF006C0DE8 /* fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -329,6 +332,7 @@
 				DAA65DD385F49E0567FE90FF /* PrivacyInfo.xcprivacy in Resources */,
 				2FB0DA682CB84CEE006C0DE8 /* Satoshi-Medium.otf in Resources */,
 				2FB0DA672CB84CEE006C0DE8 /* Satoshi-Italic.otf in Resources */,
+				2F264A5F2DA56CF100B9197D /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
