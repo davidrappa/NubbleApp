@@ -2,7 +2,8 @@ import React from 'react';
 
 import {Post} from '@domain';
 
-import {Box, ProfileUser} from '@components';
+import {Box} from '../Box/Box';
+import {ProfileUser} from '../ProfileUser/ProfileUser';
 
 import {PostActions} from './components/PostActions';
 import {PostBottom} from './components/PostBottom';
@@ -23,12 +24,7 @@ export function PostItem({post, hideCommentAction}: Props) {
         }}
       />
       <PostImage imageURL={post.imageURL} />
-      <PostActions
-        hideCommentAction={hideCommentAction}
-        commentCount={post.commentCount}
-        favoriteCount={post.favoriteCount}
-        reactionCount={post.reactionCount}
-      />
+      <PostActions hideCommentAction={hideCommentAction} post={post} />
       <PostBottom
         hideCommentAction={hideCommentAction}
         author={post.author}
