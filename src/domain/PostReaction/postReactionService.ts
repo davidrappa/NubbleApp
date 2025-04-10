@@ -1,13 +1,12 @@
+// import {Page} from '@types';
+
 import {apiAdapter} from '@api';
 import {Page} from '@types';
 
 import {postReactionAdapter} from './postReactionAdapter';
 import {postReactionApi} from './postReactionApi';
-import {
-  PostReaction,
-  PostReactionBase,
-  PostReactionType,
-} from './postReactionType';
+
+import {PostReaction, PostReactionBase, PostReactionType} from '.';
 
 const PER_PAGE = 10;
 
@@ -39,7 +38,17 @@ async function reactToPost(
   return postReactionAdapter.toPostReactionBase(postReactionBaseAPI);
 }
 
+function hasReactedToPost(
+  postReactions: Pick<PostReaction, 'emojiType'>[],
+  postReactionType: PostReactionType,
+): boolean {
+  return postReactions.some(
+    reaction => reaction.emojiType === postReactionType,
+  );
+}
+
 export const postReactionService = {
   getMyReactions,
   reactToPost,
+  hasReactedToPost,
 };
