@@ -2,8 +2,7 @@ import React from 'react';
 
 import {Post} from '@domain';
 
-import {Box} from '../Box/Box';
-import {ProfileUser} from '../ProfileUser/ProfileUser';
+import {Box, ProfileUser} from '@components';
 
 import {PostActions} from './components/PostActions';
 import {PostBottom} from './components/PostBottom';
@@ -11,11 +10,11 @@ import {PostImage} from './components/PostImage';
 
 interface Props {
   post: Post;
+  hideCommentAction?: boolean;
 }
-
-export function PostItem({post}: Props) {
+export function PostItem({post, hideCommentAction}: Props) {
   return (
-    <Box marginBottom="s24" paddingHorizontal="s24">
+    <Box paddingHorizontal="s24" marginBottom="s24">
       <ProfileUser
         user={{
           id: post.author.id,
@@ -25,15 +24,17 @@ export function PostItem({post}: Props) {
       />
       <PostImage imageURL={post.imageURL} />
       <PostActions
-        reactionCount={post.reactionCount}
+        hideCommentAction={hideCommentAction}
         commentCount={post.commentCount}
         favoriteCount={post.favoriteCount}
+        reactionCount={post.reactionCount}
       />
       <PostBottom
-        id={post.id}
+        hideCommentAction={hideCommentAction}
         author={post.author}
-        commentCount={post.commentCount}
         text={post.text}
+        commentCount={post.commentCount}
+        id={post.id}
       />
     </Box>
   );

@@ -7,27 +7,24 @@ import {useToastService} from '@services';
 import {Box, ProfileAvatar, Text} from '@components';
 
 interface Props {
-  postComment: PostComment;
   postId: number;
+  postComment: PostComment;
   userId: number | null;
   postAuthorId: number;
 }
 export function PostCommentItem({
-  postComment,
   postId,
-  postAuthorId,
+  postComment,
   userId,
+  postAuthorId,
 }: Props) {
   const {showToast} = useToastService();
   const {mutate} = usePostCommentRemove(postId, {
     onSuccess: () => {
-      showToast({
-        message: 'Comentário deletado',
-        duration: 1000,
-        position: 'bottom',
-      });
+      showToast({message: 'Cometário deletado'});
     },
   });
+
   const isAllowToDelete = postCommentService.isAllowToDelete(
     postComment,
     userId,
@@ -35,7 +32,7 @@ export function PostCommentItem({
   );
 
   function confirmRemove() {
-    Alert.alert('Deseja excluir o comentário', 'pressione confirmar', [
+    Alert.alert('Deseja excluir o comentário?', 'pressione confirmar', [
       {
         text: 'Confirmar',
         onPress: () => mutate({postCommentId: postComment.id}),
@@ -52,7 +49,11 @@ export function PostCommentItem({
       testID="post-comment-id"
       disabled={!isAllowToDelete}
       onLongPress={confirmRemove}>
-      <Box flexDirection="row" alignItems="center" mb="s16">
+      <Box
+        paddingHorizontal="s24"
+        flexDirection="row"
+        alignItems="center"
+        mb="s16">
         <ProfileAvatar imageURL={postComment.author.profileURL} />
         <Box ml="s12" flex={1}>
           <Text preset="paragraphSmall" bold>

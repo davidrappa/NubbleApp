@@ -3,15 +3,22 @@ import React from 'react';
 import {Post} from '@domain';
 import {useNavigation} from '@react-navigation/native';
 
-import {Box} from '../../Box/Box';
-import {Text} from '../../Text/Text';
+import {Box, Text} from '@components';
 
-type Props = Pick<Post, 'author' | 'text' | 'commentCount' | 'id'>;
+type Props = Pick<Post, 'author' | 'text' | 'commentCount' | 'id'> & {
+  hideCommentAction?: boolean;
+};
 
-export function PostBottom({author, commentCount, text, id}: Props) {
+export function PostBottom({
+  author,
+  text,
+  commentCount,
+  id,
+  hideCommentAction,
+}: Props) {
   const navigation = useNavigation();
 
-  const commentText = getCommentText(commentCount);
+  const commentText = hideCommentAction ? null : getCommentText(commentCount);
 
   function navigateToPostCommentScreen() {
     navigation.navigate('PostCommentScreen', {
@@ -30,11 +37,11 @@ export function PostBottom({author, commentCount, text, id}: Props) {
       </Text>
       {commentText && (
         <Text
+          onPress={navigateToPostCommentScreen}
+          mt="s8"
           preset="paragraphSmall"
           bold
-          color="primary"
-          mt="s8"
-          onPress={navigateToPostCommentScreen}>
+          color="primary">
           {commentText}
         </Text>
       )}
@@ -45,11 +52,9 @@ export function PostBottom({author, commentCount, text, id}: Props) {
 function getCommentText(commentCount: number): string | null {
   if (commentCount === 0) {
     return null;
-  }
-
-  if (commentCount === 1) {
+  } else if (commentCount === 1) {
     return 'ver comentário';
+  } else {
+    return `ver ${commentCount} comentários`;
   }
-
-  return `ver ${commentCount} comentários`;
 }
