@@ -1,40 +1,16 @@
 import React from 'react';
-import {RefreshControl, ScrollView} from 'react-native';
 
-import {useUserGetById} from '@domain';
+import {useAuthCredentials} from '@services';
 
-import {ActivityIndicator, Box, ProfileAvatar, Screen, Text} from '@components';
-import {AppScreenProps} from '@routes';
+import {ProfileTemplate} from '@components';
+import {AppTabScreenProps} from '@routes';
 
-export function ProfileScreen({route}: AppScreenProps<'ProfileScreen'>) {
-  const userId = route.params.userId;
+export function MyProfileScreen({}: AppTabScreenProps<'MyProfileScreen'>) {
+  const {userId} = useAuthCredentials();
 
-  const {isLoading, isError, user, isFetching, refetch} =
-    useUserGetById(userId);
+  if (!userId) {
+    return null;
+  }
 
-  return (
-    <Screen canGoBack flex={1}>
-      {isLoading && <ActivityIndicator color="primary" />}
-      {isError && <Text> error ao carregar perfil do usuário</Text>}
-      {user && (
-        <ScrollView
-          style={{flex: 1}}
-          refreshControl={
-            <RefreshControl refreshing={isFetching} onRefresh={refetch} />
-          }>
-          <Box alignItems="center" flex={1}>
-            <ProfileAvatar
-              imageURL={user.profileUrl}
-              size={64}
-              borderRadius={24}
-            />
-            <Text preset="headingMedium" bold>
-              {user.fullName}
-            </Text>
-            <Text>@{user.username}</Text>
-          </Box>
-        </ScrollView>
-      )}
-    </Screen>
-  );
+  return <ProfileTemplate userId={userId} />;
 }

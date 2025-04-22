@@ -1,13 +1,11 @@
 import {useState} from 'react';
 
-import {
-  Post,
-  PostReactionBase,
-  PostReactionType,
-  postReactionService,
-} from '@domain';
+import {Post} from '@domain';
 import {MutationOptions, QueryKeys} from '@infra';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
+
+import {postReactionService} from '../postReactionService';
+import {PostReactionBase, PostReactionType} from '../postReactionType';
 
 type Params = {
   post: Post;
