@@ -13,6 +13,10 @@ const mateusUserAPI: UserAPI = {
     'https://nubble-development.s3.sa-east-1.amazonaws.com/backend-integration/8-mateus.png',
   is_online: false,
   full_name: 'Mateus de Souza',
+  meta: {
+    followers_count: '30',
+    following_count: '23',
+  },
 };
 
 export const mateusAuthCredentials: AuthCredentials = {
@@ -46,11 +50,14 @@ const postCommentAPI: PostCommentAPI = {
     last_name: 'Tavares',
     username: 'celotavares',
     email: 'celotavares@coffstack.com',
-
     profile_url:
       'https://nubble-development.s3.sa-east-1.amazonaws.com/backend-integration/6-marcelo.png',
     is_online: false,
     full_name: 'Marcelo Tavares',
+    meta: {
+      followers_count: '30',
+      following_count: '23',
+    },
   },
 
   meta: {},
