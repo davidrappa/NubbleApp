@@ -26,8 +26,8 @@ export function ProfileMetadata({
       justifyContent="space-between"
       mt="s24"
       columnGap="s32">
-      {items.map(item => (
-        <Item {...item} />
+      {items.map((item, index) => (
+        <Item {...item} key={index} />
       ))}
     </Box>
   );
