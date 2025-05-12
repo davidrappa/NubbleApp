@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Dimensions,
   Image,
@@ -24,6 +24,7 @@ type Props = {
   isMyProfile?: boolean;
 };
 export function ProfileTemplate({userId, isMyProfile}: Props) {
+  const [publicationCount, setPublicationCount] = useState(0);
   const {user} = useUserGetById(userId);
 
   function renderItem({item}: ListRenderItemInfo<Post>) {
@@ -39,16 +40,23 @@ export function ProfileTemplate({userId, isMyProfile}: Props) {
     if (!user) {
       return null;
     }
-    return <ProfileHeader user={user} isMyProfile={isMyProfile} />;
+    return (
+      <ProfileHeader
+        user={user}
+        isMyProfile={isMyProfile}
+        publicationCount={publicationCount.toString()}
+      />
+    );
   }
 
   async function getPostList(page: number) {
     const response = await postService.getList(page, userId);
+    setPublicationCount(response.meta.total);
     return response;
   }
 
   return (
-    <Screen canGoBack={!isMyProfile} flex={1} style={$screen}>
+    <Screen flex={1} style={$screen}>
       <InfinityScrollList
         queryKey={[QueryKeys.PostList, userId]}
         getList={getPostList}
