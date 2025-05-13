@@ -1,79 +1,40 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 Nubble App (Profissional React Native)
 
-# Getting Started
+Bem-vindo ao repositório do Nubble App, o projeto construído nas aulas do curso [PRN (Profissional React Native)](https://coffstack.com.br/profissional-react-native). Usei esse curso para aprimorar e consolidar os conceitos práticos utilizados no mercado de trabalho, desde o básico até avançado, tudo isso construindo um super App com integração com Backend, **testes automatizados**, pipelines de **CI/CD** com GitHub Actions e Fastlane e muito **TypeScript**!
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+|                               |                               |                               |                               |
+| :---------------------------: | :---------------------------: | :---------------------------: | :---------------------------: |
+| ![](docs/images/screen-1.png) | ![](docs/images/screen-2.png) | ![](docs/images/screen-3.png) | ![](docs/images/screen-4.png) |
+| ![](docs/images/screen-5.png) | ![](docs/images/screen-6.png) | ![](docs/images/screen-7.png) | ![](docs/images/screen-8.png) |
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Confira o Figma completo com todas as tela [aqui](https://www.figma.com/design/qZVdIhrBpXhyZCPhy1WfAh/App---Nubble-(v.1.1)?node-id=0-1&node-type=canvas&t=4cefBF86AoGmB161-0)!
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## ⛏️ Tech (Bibliotecas e Tecnologias)
 
-```bash
-# using npm
-npm start
+- [React Native CLI](https://reactnative.dev/docs/getting-started-without-a-framework)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Jest](https://jestjs.io/) e [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
+- CI/CD com [Fastlane](https://fastlane.tools/) e [GitHub Actions](https://github.com/features/actions)
+- [React Hook Form](https://react-hook-form.com/) e [Zod](https://zod.dev/)
+- [Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction)
+- [TanStack Query (React Query)](https://tanstack.com/query/latest)
+- [React Native MMKV](https://github.com/mrousavy/react-native-mmkv)
+- [Shopify Restyle](https://shopify.github.io/restyle/)
+- [React Navigation](https://reactnavigation.org/)
+- [EsLint](https://eslint.org/), [Prettier](https://prettier.io/) e [Husky](https://typicode.github.io/husky/)
+- [React Native Vision Camera](https://react-native-vision-camera.com/docs/guides)
 
-# OR using Yarn
-yarn start
-```
+## 🏗️ Arquitetura do Projeto
 
-## Step 2: Start your Application
+O Nubble App adota uma arquitetura em camadas com princípios de Clean Architecture, SOLID, design patterns e MVVM (Model-View-ViewModel). Esta estrutura, validada em projetos com milhares de usuários, visa criar apps fáceis de entender e manter, além de escaláveis em termos de base de código e equipe.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+![](docs/images//nubble-arch.png)
 
-### For Android
+## 👨🏻‍💻 Quem sou eu?
 
-```bash
-# using npm
-npm run android
+**David Rappa** é um especialista em React Native com **mais de 5 anos de experiência** pratica no desenvolvimento de aplicativos de alto desempenho para empresas no **Brasil**. Atualmente trabalhando como **engenheiro de software pleno** em uma empresa de e-commerce no Brasil.
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- [LinkedIn](https://www.linkedin.com/in/davidrappa1/)
+- [GitHub](https://github.com/davidrappa)
+- [Instagram](https://www.instagram.com/dvdrpp/)
