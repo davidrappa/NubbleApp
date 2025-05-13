@@ -5,11 +5,11 @@ import {useNavigation} from '@react-navigation/native';
 
 import {BackButton} from '../../BackButton/BackButton';
 import {Box} from '../../Box/Box';
-import {Button} from '../../Button/Button';
 import {Icon} from '../../Icon/Icon';
 import {ProfileAvatar} from '../../ProfileAvatar/ProfileAvatar';
 import {Text} from '../../Text/Text';
 
+import {ProfileButton} from './ProfileButton';
 import {ProfileMetadata} from './ProfileMetadata';
 
 type Props = {
@@ -53,7 +53,7 @@ export function ProfileHeader({user, isMyProfile, publicationCount}: Props) {
           </Box>
         )}
       </Box>
-      <Button title="TO DO" marginVertical="s24" />
+      <ProfileButton isMyProfile={isMyProfile} isFollowing={true} />
     </Box>
   );
 }

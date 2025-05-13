@@ -46,6 +46,9 @@ const lightTheme = {
 
   onBackgroundGray1: palette.gray1,
   onBackgroundGray2: palette.gray4,
+
+  buttonGrayContainer: palette.gray5,
+  buttonGrayContent: palette.grayBlack,
 };
 
 const darkTheme: typeof lightTheme = {
@@ -74,6 +77,9 @@ const darkTheme: typeof lightTheme = {
 
   onBackgroundGray1: palette.gray3,
   onBackgroundGray2: palette.gray1,
+
+  buttonGrayContainer: palette.gray1,
+  buttonGrayContent: palette.grayWhite,
 };
 
 export const colors = {palette, lightTheme, darkTheme};
