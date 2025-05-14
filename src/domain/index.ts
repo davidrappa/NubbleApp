@@ -7,3 +7,5 @@ export * from './Auth';
 export * from './User';
 
 export * from './PostReaction';
+
+export * from './Follow';
