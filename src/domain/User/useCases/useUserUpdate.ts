@@ -1,8 +1,8 @@
 import {MutationOptions, QueryKeys} from '@infra';
-import {useAuthCredentials} from '@services';
 import {useMutation, useQueryClient} from '@tanstack/react-query';
 
-import {userService} from '..';
+import {useAuthCredentials} from '../../../services/authCredentials/useAuthCredentials';
+import {userService} from '../userService';
 import {UpdateUserParams, User} from '../userTypes';
 
 export function useUserUpdate(options?: MutationOptions<User>) {

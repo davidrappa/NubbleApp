@@ -2,10 +2,10 @@ import React, {useEffect} from 'react';
 import {createContext, useState} from 'react';
 
 import {api} from '@api';
-import {User} from '@domain';
 
 import {authService} from '../../../domain/Auth/authService';
 import {AuthCredentials} from '../../../domain/Auth/authTypes';
+import {User} from '../../../domain/User/userTypes';
 import {authCredentialsStorage} from '../authCredentialsStorage';
 import {AuthCredentialsService} from '../authCredentialsTypes';
 
