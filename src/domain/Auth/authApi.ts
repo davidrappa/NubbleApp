@@ -5,6 +5,7 @@ import {UserAPI} from '../User';
 
 import {
   AuthCredentialsAPI,
+  EditPasswordParams,
   FieldIsAvailableAPI,
   ForgotPasswordParam,
   SignUpDataAPI,
@@ -79,6 +80,16 @@ function isRefreshTokenRequest(request: AxiosRequestConfig): boolean {
   return url === REFRESH_TOKEN_URL;
 }
 
+async function editPassword(
+  params: EditPasswordParams,
+): Promise<{message: string}> {
+  const response = await api.post<{message: string}>(
+    'auth/profile/edit-password',
+    params,
+  );
+  return response.data;
+}
+
 export const authApi = {
   signIn,
   signOut,
@@ -88,4 +99,5 @@ export const authApi = {
   forgotPassword,
   refreshToken,
   isRefreshTokenRequest,
+  editPassword,
 };
