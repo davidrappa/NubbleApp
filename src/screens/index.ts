@@ -24,3 +24,6 @@ export * from './onboarding/OnboardingScreen/OnboardingScreen';
 export * from './app/EditEmailScreen/EditEmailScreen';
 export * from './app/EditPasswordScreen/EditPasswordScreen';
 export * from './app/EditProfileScreen/EditProfileScreen';
+
+export * from './app/MyFollowersScreen/MyFollowersScreen';
+export * from './app/MyFollowingScreen/MyFollowingScreen';

@@ -14,6 +14,8 @@ import {
   EditProfileScreen,
   EditEmailScreen,
   EditPasswordScreen,
+  MyFollowingScreen,
+  MyFollowersScreen,
 } from '@screens';
 
 import {AppTabBottomTabParamList, AppTabNavigator} from './AppTabNavigator';
@@ -36,6 +38,8 @@ export type AppStackParamList = {
   EditProfileScreen: {userId: number};
   EditEmailScreen: {userId: number};
   EditPasswordScreen: {userId: number};
+  MyFollowingScreen: undefined;
+  MyFollowersScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<AppStackParamList>();
@@ -62,6 +66,8 @@ export function AppStack({initialRouteName = 'AppTabNavigator'}: Props) {
       <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
       <Stack.Screen name="EditEmailScreen" component={EditEmailScreen} />
       <Stack.Screen name="EditPasswordScreen" component={EditPasswordScreen} />
+      <Stack.Screen name="MyFollowingScreen" component={MyFollowingScreen} />
+      <Stack.Screen name="MyFollowersScreen" component={MyFollowersScreen} />
     </Stack.Navigator>
   );
 }
