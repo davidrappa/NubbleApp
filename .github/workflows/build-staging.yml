@@ -31,11 +31,8 @@ jobs:
       - name: Install Packages
         run: yarn install
 
-      - name: Check Keystore Secret
-        run: "echo Length: $(echo -n '${{secrets.ANDROID_UPLOAD_KEY_BASE64}}' | wc -c)"
-
       - name: Decode Keystore
-        run: echo ${{secrets.ANDROID_UPLOAD_KEY_BASE64}} | base64 --decode > app/debug.keystore
+        run: echo ${{secrets.ANDROID_UPLOAD_KEY_BASE64}} | base64 --decode > app/debug.keystore.jks
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
