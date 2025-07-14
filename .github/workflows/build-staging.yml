@@ -1,7 +1,7 @@
 name: Build Staging Version
 
 env:
-  APK_PATH: android/app/build/outputs/apk/release/app-release.apk
+  APK_PATH: app/build/outputs/apk/release/app-release.apk
 
 on:
   workflow_dispatch:
@@ -14,10 +14,12 @@ jobs:
       run:
         shell: bash
         working-directory: ./android
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Set up Node
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -28,14 +30,16 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Install Packages
+      - name: Install Node Packages
         run: yarn install
 
       - name: Decode Keystore
-        run: echo ${{secrets.ANDROID_UPLOAD_KEY_BASE64}} | base64 --decode > app/debug.keystore.jks
+        run: |
+          mkdir -p app
+          echo "${{ secrets.ANDROID_UPLOAD_KEY_BASE64 }}" | base64 --decode > app/debug.keystore.jks
 
       - name: Make gradlew executable
-        run: chmod +x ./gradlew
+        run: chmod +x gradlew
 
       - name: Build APK
         run: ./gradlew assembleRelease
@@ -44,9 +48,9 @@ jobs:
           ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
 
-      - name: Upload APK to Artifacts
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release.apk
-          path: ${{ env.APK_PATH }}
+          path: android/${{ env.APK_PATH }}
           retention-days: 7
